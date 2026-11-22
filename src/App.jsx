@@ -39,6 +39,7 @@ function StatusPanel({
   currentPlayer,
   winner,
   isDraw,
+  isGameOver,
   moves,
   isSoundOn,
   isAudioAvailable,
@@ -94,7 +95,7 @@ function StatusPanel({
         </button>
 
         <button className="reset-button" type="button" onClick={onReset}>
-          Reset game
+          {isGameOver ? 'Play again' : 'Reset game'}
         </button>
       </div>
     </section>
@@ -185,6 +186,7 @@ function App() {
           currentPlayer={currentPlayer}
           winner={gameState.winner}
           isDraw={gameState.isDraw}
+          isGameOver={isGameOver}
           moves={moves}
           isSoundOn={isSoundOn}
           isAudioAvailable={isAudioAvailable}
